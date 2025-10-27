@@ -26,9 +26,9 @@ fig, ax = plt.subplots(figsize=(12, 6))
 x = df['Time']
 bar_width = 0.2
 
-ax.bar(x - pd.Timedelta(hours=1), df['Delta_LAN_OUT_MB'], width=bar_width,
+ax.bar(x - pd.Timedelta(hours=0.5), df['Delta_LAN_OUT_MB'], width=bar_width,
        label='LAN OUT (MB)', color='steelblue', alpha=0.8)
-ax.bar(x + pd.Timedelta(hours=1), df['Delta_ISP_IN_MB'], width=bar_width,
+ax.bar(x + pd.Timedelta(hours=0.5), df['Delta_ISP_IN_MB'], width=bar_width,
        label='ISP IN (MB)', color='orange', alpha=0.8)
 
 # --- Popisky a souhrn ---
