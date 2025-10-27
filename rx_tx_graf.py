@@ -11,6 +11,8 @@ import streamlit as st
 # --- Načtení dat ---
 df = pd.read_csv('/Users/Marek/tableau_project/Rx_Tx_new/traffic_log_dif.csv')
 df['Time'] = pd.to_datetime(df['Time'], errors='coerce')
+# --- Filtrování od 21. října ---
+df = df[df['Time'] >= '2025-10-21']
 
 # --- Výpočet součtů bez filtrace ---
 lan_sum = df["Delta_LAN_OUT_MB"].sum()
