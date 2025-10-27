@@ -24,7 +24,7 @@ plt.style.use('seaborn-v0_8')
 fig, ax = plt.subplots(figsize=(12, 6))
 
 x = df['Time']
-bar_width = 0.4
+bar_width = 0.2
 
 ax.bar(x - pd.Timedelta(hours=6), df['Delta_LAN_OUT_MB'], width=bar_width,
        label='LAN OUT (MB)', color='steelblue', alpha=0.8)
