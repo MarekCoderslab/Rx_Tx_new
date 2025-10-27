@@ -37,7 +37,7 @@ ax.set_ylim(0, 1000)
 ax.legend()
 plt.xticks(rotation=45)
 
-summary = f"LAN = {lan_sum:.2f} MB\nISP = {isp_sum:.2f} MB\nCelkem = {total_sum:.2f} MB"
+summary = f"OUT = {lan_sum:.2f} MB\nIN = {isp_sum:.2f} MB\nCelkem = {total_sum:.2f} MB"
 plt.text(0.99, 0.95, summary, transform=ax.transAxes,
          fontsize=12, ha='right', va='top',
          bbox=dict(facecolor='white', alpha=0.6, edgecolor='gray'))
