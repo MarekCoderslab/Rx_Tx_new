@@ -1,0 +1,74 @@
+
+
+timestamp 2025-11-05 14:13:03
+ISP_IN: 1283076588
+LAN_OUT: 2071247727
+Uptime: 139359500
+timestamp 2025-11-05 15:02:33
+ISP_IN: 1334555699
+LAN_OUT: 2123404083
+Uptime: 139656500
+timestamp 2025-11-05 16:00:01
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-05 17:00:01
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-05 17:03:02
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-05 18:00:01
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-05 19:00:02
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-05 20:15:27
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-06 01:02:51
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-06 02:06:23
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-06 03:08:10
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-06 04:00:23
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-06 05:05:03
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-06 06:01:57
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-06 07:08:00
+ISP_IN: None
+LAN_OUT: None
+Uptime: None
+timestamp 2025-11-06 11:01:41
+ISP_IN: 1887354266
+LAN_OUT: 0
+Uptime: 146851400
+timestamp 2025-11-06 11:03:31
+ISP_IN: 1888574509
+LAN_OUT: 0
+Uptime: 146862200
+timestamp 2025-11-07 20:17:51
+ISP_IN: 3465885484
+LAN_OUT: 0
+Uptime: 158828000

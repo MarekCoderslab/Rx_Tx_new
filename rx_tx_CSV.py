@@ -4,9 +4,13 @@ import json
 from datetime import datetime
 import pandas as pd
 
+print("Pracovní adresář:", os.getcwd())
+
 # ---------- SNMP část ----------
 def snmp_get(oid):
+
     from pysnmp.hlapi import SnmpEngine, CommunityData, UdpTransportTarget, ContextData, ObjectType, ObjectIdentity, getCmd
+    
     iterator = getCmd(
         SnmpEngine(),
         CommunityData('omegadejdar', mpModel=0),
@@ -54,9 +58,9 @@ def safe_bytes_to_mb(current, previous=None, unit='binary', max_counter=2**32):
         return None
 
 # ---------- Cesty ----------
-raw_log = 'traffic_log.csv'
-dif_log = 'traffic_log_dif.csv'
-state_file = 'traffic_state.json'
+raw_log = '/Users/Marek/tableau_project/Rx_Tx_new/traffic_log.csv'
+dif_log = '/Users/Marek/tableau_project/Rx_Tx_new/traffic_log_dif.csv'
+state_file = '/Users/Marek/tableau_project/Rx_Tx_new/traffic_state.json'
 
 # ---------- OID definice ----------
 oids = {
@@ -98,12 +102,13 @@ if not restart:
 
 # ---------- Zápis do traffic_log.csv ----------
 write_header = not os.path.exists(raw_log) or os.path.getsize(raw_log) == 0
+
 with open(raw_log, mode='a', newline='') as file:
     writer = csv.writer(file)
     if write_header:
-        writer.writerow(['Time', 'ISP_IN_MB', 'LAN_OUT_MB', 'ISP_uptime'])
-    writer.writerow([timestamp, safe_bytes_to_mb(raw_isp_in), safe_bytes_to_mb(raw_lan_out), isp_uptime])
-
+        writer.writerow(['Time', 'RAW_ISP_IN', 'RAW_LAN_OUT', 'ISP_uptime'])
+    writer.writerow([timestamp, raw_isp_in, raw_lan_out, isp_uptime])
+    
 # ---------- Zápis do traffic_log_dif.csv ----------
 write_header_dif = not os.path.exists(dif_log) or os.path.getsize(dif_log) == 0
 with open(dif_log, mode='a', newline='') as file:
@@ -129,3 +134,9 @@ with open(state_file, 'w') as f:
         'lan_out': raw_lan_out,
         'uptime': isp_uptime
     }, f)
+
+with open("/Users/Marek/tableau_project/Rx_Tx_new/vystup.txt", "a") as f:
+    print("timestamp", timestamp, file=f)
+    print("ISP_IN:", raw_isp_in, file=f)
+    print("LAN_OUT:", raw_lan_out, file=f)
+    print("Uptime:", raw_isp_uptime, file=f)
