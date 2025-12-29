@@ -24,7 +24,7 @@ if uploaded_file is not None:
 
     # --- Vykreslení grafu ---
     plt.style.use('seaborn-v0_8')
-    fig, ax1 = plt.subplots(figsize=(12, 6))
+    fig, ax1 = plt.subplots(figsize=(18, 10))
 
     x = df['Time']
     bar_width = 0.05
