@@ -29,7 +29,7 @@ if uploaded_file is not None:
     fig, ax1 = plt.subplots(figsize=(12, 6))
 
     x = df['Time']
-    bar_width = 0.2
+    bar_width = 0.05
     offset = pd.Timedelta(minutes=15)
 
     ax1.bar(x - offset, df['Delta_LAN_OUT_MB'], width=bar_width, label='LAN OUT (MB)', color='steelblue', alpha=0.5)
