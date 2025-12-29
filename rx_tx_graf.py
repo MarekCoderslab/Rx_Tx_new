@@ -28,7 +28,7 @@ if uploaded_file is not None:
 
     x = df['Time']
     bar_width = 0.03
-    offset = pd.Timedelta(minutes=15)
+    offset = pd.Timedelta(minutes=5)
 
     ax1.bar(x - offset, df['Delta_LAN_OUT_MB'], width=bar_width, label='LAN OUT (MB)', color='steelblue', alpha=0.5)
     ax1.bar(x + offset, df['Delta_ISP_IN_MB'], width=bar_width, label='ISP IN (MB)', color='orange', alpha=0.5)
