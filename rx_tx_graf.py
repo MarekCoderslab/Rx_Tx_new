@@ -68,6 +68,11 @@ if uploaded_file is not None:
     ax2.grid(False)
 
     st.pyplot(fig)
+    
+    st.subheader("Posledních 10 záznamů")
+    df_sorted = df.sort_values(by="Time", ascending=False)
+    last_10 = df_sorted.head(10)
+    st.dataframe(last_10)
 
 else:
     st.info("Vyber CSV soubor pro zobrazení grafu.")
