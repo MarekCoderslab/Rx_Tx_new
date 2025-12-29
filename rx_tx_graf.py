@@ -15,8 +15,6 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     df['Time'] = pd.to_datetime(df['Time'], errors='coerce')
 
-    # --- Filtrování od 21. října ---
-    df = df[df['Time'] >= '2025-10-21']
 
     # --- Výpočet součtů ---
     df['ISP_Speed_MB_per_hr'] = (df['Delta_ISP_IN_MB'] / df['Delta_Time_hr']).round(2)
