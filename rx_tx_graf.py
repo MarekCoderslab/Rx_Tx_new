@@ -24,10 +24,10 @@ if uploaded_file is not None:
 
     # --- Vykreslení grafu ---
     plt.style.use('seaborn-v0_8')
-    fig, ax1 = plt.subplots(figsize=(18, 10))
+    fig, ax1 = plt.subplots(figsize=(12, 6))
 
     x = df['Time']
-    bar_width = 0.05
+    bar_width = 0.03
     offset = pd.Timedelta(minutes=15)
 
     ax1.bar(x - offset, df['Delta_LAN_OUT_MB'], width=bar_width, label='LAN OUT (MB)', color='steelblue', alpha=0.5)
