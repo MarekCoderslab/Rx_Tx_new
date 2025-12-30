@@ -12,6 +12,7 @@ uploaded_file = st.file_uploader("Vyber CSV soubor", type=["csv"])
 
 if uploaded_file is not None:
     # Načtení dat
+    st.cache_data.clear() # <<< VYMAZÁNÍ CACHE
     df = pd.read_csv(uploaded_file)
     df['Time'] = pd.to_datetime(df['Time'], errors='coerce')
 
