@@ -63,8 +63,8 @@ if uploaded_file is not None:
              fontsize=12, ha='right', va='top',
              bbox=dict(facecolor='white', alpha=0.6, edgecolor='gray'))
 
-    ax1.set_ylim(0, 1000)
-    ax2.set_ylim(0, 100)
+    ax1.set_ylim(0, 2000)
+    ax2.set_ylim(0, 200)
     ax1.grid(True, color='dimgray', linestyle='--', linewidth=0.7)
     ax2.grid(False)
 
