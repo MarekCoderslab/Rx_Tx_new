@@ -81,9 +81,10 @@ if uploaded_file is not None:
 
     st.pyplot(fig)
     
+    # vykreslení tabulky
     st.subheader("Posledních 10 záznamů")
     df_sorted = df.sort_values(by="Time", ascending=False)
-    last_10 = df_sorted.head(10)
+    last_10 = df_sorted.head(168)
     st.dataframe(last_10)
 
 else:
