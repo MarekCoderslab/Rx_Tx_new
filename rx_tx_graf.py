@@ -50,8 +50,9 @@ if uploaded_file is not None:
     ax2 = ax1.twinx()
     ax2.plot(x, df['ISP_Speed_MB_per_hr'], color='green', marker='o', linewidth=2, label='Rychlost ISP (MB/h)')
     ax2.set_ylabel('Rychlost ISP (MB/h)', fontsize=12)
-    ax2.legend(loc='upper right')
+
     ax2.bar(x + offset, df['Delta_ISP_IN_MB'], width=bar_width, label='ISP IN (MB)', color='orange', alpha=0.5)
+    ax2.legend(loc='upper center')
 
     for i in range(len(df)):
         ax2.annotate(
