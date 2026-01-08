@@ -10,12 +10,23 @@ st.title("Analýza přenosu dat")
 # --- Výběr souboru ---
 uploaded_file = st.file_uploader("Vyber CSV soubor", type=["csv"])
 
+
 if uploaded_file is not None:
+    
+    from datetime import timedelta
     # Načtení dat
     st.cache_data.clear() # <<< VYMAZÁNÍ CACHE
     df = pd.read_csv(uploaded_file)
     df['Time'] = pd.to_datetime(df['Time'], errors='coerce')
+    
+    # Převod sloupce 'Time' na formát datetime (pokud již není)
+    df['Time'] = pd.to_datetime(df['Time'])
 
+    # Výpočet hranice pro poslední týden
+    posledni_tyden = pd.Timestamp.now() - timedelta(days=7)
+
+    # Filtrace
+    df = df[df['Time'] >= posledni_tyden]
 
     # --- Výpočet součtů ---
     df['ISP_Speed_MB_per_hr'] = (df['Delta_ISP_IN_MB'] / df['Delta_Time_hr']).round(2)
@@ -32,8 +43,7 @@ if uploaded_file is not None:
     offset = pd.Timedelta(minutes=5)
 
     ax1.bar(x - offset, df['Delta_LAN_OUT_MB'], width=bar_width, label='LAN OUT (MB)', color='steelblue', alpha=0.5)
-    ax1.bar(x + offset, df['Delta_ISP_IN_MB'], width=bar_width, label='ISP IN (MB)', color='orange', alpha=0.5)
-
+    
     ax1.set_ylabel('Přenos dat (MB)', fontsize=12)
     ax1.legend(loc='upper left')
 
@@ -41,6 +51,7 @@ if uploaded_file is not None:
     ax2.plot(x, df['ISP_Speed_MB_per_hr'], color='green', marker='o', linewidth=2, label='Rychlost ISP (MB/h)')
     ax2.set_ylabel('Rychlost ISP (MB/h)', fontsize=12)
     ax2.legend(loc='upper right')
+    ax2.bar(x + offset, df['Delta_ISP_IN_MB'], width=bar_width, label='ISP IN (MB)', color='orange', alpha=0.5)
 
     for i in range(len(df)):
         ax2.annotate(
