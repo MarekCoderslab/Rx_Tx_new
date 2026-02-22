@@ -6,14 +6,16 @@ import streamlit as st
 
 st.title("Analýza přenosu dat")
 
-RASPBERRY_CSV_URL = "http://192.168.11.89:8000/traffic_log_dif.csv"
-df = pd.read_csv(RASPBERRY_CSV_URL)
+
+GITHUB_CSV_URL = "https://raw.githubusercontent.com/MarekCoderslab/Rx_Tx_new/main/traffic_log_dif.csv"  
+
 
 
 @st.cache_data
 def load_data():
     df = pd.read_csv(GITHUB_CSV_URL)
-    df['Time'] = pd.to_datetime(df['Time'], errors='coerce')
+    df['Time'] = 
+    pd.to_datetime(df['Time'], errors='coerce')
     return df
 
 # --- Načtení dat ---
