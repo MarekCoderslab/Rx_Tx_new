@@ -8,7 +8,7 @@ st.title("Analýza přenosu dat")
 
 GITHUB_CSV_URL = "https://raw.githubusercontent.com/MarekCoderslab/Rx_Tx_new/main/traffic_log_dif.csv"  
 
-@st.cache_data
+@st.cache_data(ttl=1800)
 def load_data():
     df = pd.read_csv(GITHUB_CSV_URL)
     df['Time'] = pd.to_datetime(df['Time'], errors='coerce')
