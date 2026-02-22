@@ -6,8 +6,8 @@ import streamlit as st
 
 st.title("Analýza přenosu dat")
 
-# --- GitHub RAW CSV URL ---
-GITHUB_CSV_URL = "https://raw.githubusercontent.com/MarekCoderslab/Rx_Tx_new/main/traffic_log_dif.csv"
+RASPBERRY_CSV_URL = "http://192.168.11.89:8000/traffic_log_dif.csv"
+df = pd.read_csv(RASPBERRY_CSV_URL)
 
 
 @st.cache_data
