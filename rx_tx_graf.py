@@ -80,3 +80,11 @@ st.subheader("Záznamy z posledního týdne")
 df_sorted = df.sort_values(by="Time", ascending=False)
 last_10 = df_sorted.head(168)
 st.dataframe(last_10)
+
+st.markdown("---")
+st.markdown(
+    "<div style='text-align:center;'>"
+    "<a href='mailto:marek.coderslab@gmail.com'>Created: marek.coderslab@gmail.com</a>"
+    "</div>",
+    unsafe_allow_html=True
+)
